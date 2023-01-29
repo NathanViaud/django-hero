@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %} {% block content %}
+<article>
+    <header>
+        <h2>Livre dont vous êtes le héros</h2>
+    </header>
+    <body>
+        <p>Vous n'avez pas de sauvegarde local</p>
+        <a role="button" href="{% url 'characterform' %}">Nouvelle partie</a>
+    </body>
+</article>
+{%endblock%}

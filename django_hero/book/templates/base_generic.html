@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% block title %}
+        <title>Livre dont vous êtes le héro</title>
+        {% endblock %}
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"
+        />
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    </head>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <strong><a href="/">Site</a></strong>
+                </li>
+            </ul>
+            <ul>
+                <li><a href="/book/login">Login</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <div>{% block content %} {% endblock %}</div>
+    </body>
+</html>

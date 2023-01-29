@@ -1,0 +1,43 @@
+{% extends "base_generic.html" %} {% block content %}
+<article class="form">
+    <header>
+        <h2>Character creation</h2>
+    </header>
+    <body>
+        <form action="/book/page">
+            <div class="grid">
+                <label for="firstname">
+                    First name
+                    <input
+                        type="text"
+                        id="firstname"
+                        placeholder="First name"
+                        aria-invalid="false"
+                    />
+                </label>
+                <label for="lastname">
+                    Last name
+                    <input
+                        type="text"
+                        id="lastname"
+                        placeholder="Last name"
+                        aria-invalid="true"
+                    />
+                </label>
+            </div>
+            <label for="class">Class</label>
+            <select id="class">
+                <option value="" selected>Select a class...</option>
+                <option value="warrior">Warrior</option>
+                <option value="ranger">Ranger</option>
+                <option value="mage">Mage</option>
+            </select>
+            <label for="color">
+                Color of your line
+                <input type="color" id="color" value="#0eaaaa" />
+            </label>
+            <button>Submit</button>
+        </form>
+    </body>
+</article>
+{% endblock %}
