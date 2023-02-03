@@ -33,8 +33,3 @@ Pour gérer les comptes utilisateurs et le passage de données en session, on po
 
     https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions
     https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
-
-Liens
-
-    Le principe du livre dont vous êtes le héros
-    Un exemple d’implémentation en ligne
