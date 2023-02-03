@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.views import generic
+
+from .models import Page
 
 def index(request):
     title = 'Django Hero'
@@ -11,16 +14,8 @@ def index(request):
 
     return render(request, 'index.html', context=context)
 
-def page(request):
-    title = 'Django Hero'
-    subtitle = 'Django Hero is a book about Django'
-
-    context = {
-        'title': title,
-        'subtitle': subtitle,
-    }
-
-    return render(request, 'page.html', context=context)
+class PageView(generic.DetailView):
+    model = Page
 
 def characterForm(request):
     title = 'Django Hero'
