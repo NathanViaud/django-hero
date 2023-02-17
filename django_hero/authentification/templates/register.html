@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %} {% block content %}
+<article class="form">
+    <h1>Register</h1>
+    <form action="">
+        <label for="username">
+            Username
+            <input type="text" id="username" placeholder="Username" />
+        </label>
+        <label for="password">
+            Password
+            <input type="password" id="password" placeholder="Password" />
+        </label>
+        <label for="confirmpassword">
+            Confirm Password
+            <input
+                type="password"
+                id="confirmpassword"
+                placeholder="Confirm Password"
+            />
+        </label>
+        <button>Login</button>
+    </form>
+    <p>You already have an account ? <a href="/book/login">Login</a></p>
+</article>
+{% endblock %}

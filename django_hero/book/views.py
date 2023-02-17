@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
     title = 'Django Hero'
     subtitle = 'Django Hero is a book about Django'
@@ -11,6 +13,7 @@ def index(request):
 
     return render(request, 'index.html', context=context)
 
+@login_required
 def page(request):
     title = 'Django Hero'
     subtitle = 'Django Hero is a book about Django'
@@ -32,25 +35,3 @@ def characterForm(request):
     }
 
     return render(request, 'character_form.html', context=context)
-
-def login(request):
-    title = 'Django Hero'
-    subtitle = 'Django Hero is a book about Django'
-
-    context = {
-        'title': title,
-        'subtitle': subtitle,
-    }
-
-    return render(request, 'login.html', context=context)
-
-def register(request):
-    title = 'Django Hero'
-    subtitle = 'Django Hero is a book about Django'
-
-    context = {
-        'title': title,
-        'subtitle': subtitle,
-    }
-
-    return render(request, 'register.html', context=context)
