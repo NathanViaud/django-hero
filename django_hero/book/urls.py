@@ -6,6 +6,6 @@ app_name = 'book'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('page/', views.page, name='page'),
+    path('page/<int:pk>', views.PageView.as_view(), name='page'),
     path('characterform', views.characterForm, name='characterform'),
 ]

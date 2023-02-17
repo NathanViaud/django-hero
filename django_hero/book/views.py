@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.views import generic
+
+from .models import Page
 from django.contrib.auth.decorators import login_required
 
 @login_required
