@@ -1,5 +1,4 @@
-{% extends "base_generic.html" %} {% block content %}
-{% csrf_token %}
+{% extends "base_generic.html" %} {% block content %} {% csrf_token %}
 
 <article>
     <header>
@@ -7,7 +6,7 @@
     </header>
     <body>
         <p>Vous n'avez pas de sauvegarde local</p>
-        {% comment %} <a role="button" href="{% url 'characterform' %}">Nouvelle partie</a> {% endcomment %}
+        <a role="button" href="/book/characterform">Nouvelle partie</a>
     </body>
 </article>
 {%endblock%}

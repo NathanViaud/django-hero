@@ -28,6 +28,9 @@ def page(request):
 
     return render(request, 'page.html', context=context)
 
+class PageView(generic.DetailView):
+    model = Page
+
 def characterForm(request):
     title = 'Django Hero'
     subtitle = 'Django Hero is a book about Django'

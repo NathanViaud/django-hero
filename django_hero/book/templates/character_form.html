@@ -4,7 +4,7 @@
         <h2>Character creation</h2>
     </header>
     <body>
-        <form action="/book/page">
+        <form action="/book/page/1">
             <div class="grid">
                 <label for="firstname">
                     First name
@@ -12,7 +12,7 @@
                         type="text"
                         id="firstname"
                         placeholder="First name"
-                        aria-invalid="false"
+                        required
                     />
                 </label>
                 <label for="lastname">
@@ -21,7 +21,6 @@
                         type="text"
                         id="lastname"
                         placeholder="Last name"
-                        aria-invalid="true"
                     />
                 </label>
             </div>
@@ -32,10 +31,6 @@
                 <option value="ranger">Ranger</option>
                 <option value="mage">Mage</option>
             </select>
-            <label for="color">
-                Color of your line
-                <input type="color" id="color" value="#0eaaaa" />
-            </label>
             <button>Submit</button>
         </form>
     </body>
