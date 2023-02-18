@@ -8,10 +8,13 @@
         <img src="{% static 'img/dragon.png' %}" alt="">
         {% load example %}
         <p class="page-content">{{ page.content | get_name:name }}</p>
+        {% if page.title == "Page 2" %}
+            <a role="button" class="hidden-button" href="/book/page/1">Tu dois sauver le royaume</a>
+        {% endif %}
     </body>
     <div>
     </div>
-    <div class="grid">
+    <div class="grid buttons">
         {% for choice in page.choices.all %}
             <a role="button" href="{{choice.redirect}}">
                 {{ choice.name }}

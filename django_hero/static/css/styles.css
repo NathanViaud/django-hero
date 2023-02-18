@@ -42,4 +42,24 @@ img {
 .page-content {
     margin-top: 1rem;
     text-align: center;
+    margin-bottom: 0;
+}
+
+.hidden-button {
+    width: fit-content !important;
+    background-color: white;
+    border: none;
+    color: var(--text);
+    margin: auto;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    display: flex;
+}
+
+.hidden-button:hover {
+    filter: brightness(0.97);
+}
+
+.buttons {
+    margin-top: 1rem;
 }
