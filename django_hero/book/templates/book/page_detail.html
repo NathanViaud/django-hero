@@ -5,55 +5,17 @@
     </header>
     <body>
         <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil vero
-            unde ex, autem odit cum quia minus adipisci quidem. Obcaecati
-            quaerat dolorum ea quasi? Provident enim fugiat repellat dolorem
-            itaque! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Incidunt illum cumque reiciendis, nihil aspernatur tempora quaerat
-            labore saepe natus libero, ducimus aliquam quos similique facere
-            itaque consequuntur repellendus accusantium. Optio! Lorem, ipsum
-            dolor sit amet consectetur adipisicing elit. Voluptate facilis dolor
-            unde at dolorum doloribus eveniet, blanditiis dicta molestias, sit
-            molestiae ad quidem corporis laudantium vitae laboriosam voluptas
-            deserunt illo. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Temporibus impedit ut, vitae obcaecati velit fugiat
-            repellendus magni saepe asperiores nostrum nam mollitia perferendis
-            nesciunt totam sed corporis ea eos harum! Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Culpa aliquid quisquam accusantium,
-            porro error qui cumque, vero saepe omnis facilis unde deleniti
-            labore delectus laboriosam sed eius animi nam exercitationem. Lorem
-            ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, soluta.
-            Magni hic numquam quia non deleniti amet, nemo consectetur
-            laudantium modi expedita reiciendis nulla quasi ut pariatur iusto
-            odio nisi.
+            {{ page.content }}
         </p>
     </body>
     <div>
     </div>
     <div class="grid">
         {% for choice in page.choices.all %}
-            <button>{{ choice.name }}</button>
+            <a role="button" href="{{choice.redirect}}">
+                {{ choice.name }}
+            </a>
         {% endfor %}
     </div>
 </article>
 {% endblock %}
-
-{% comment %} {% block pagination %} {% if is_paginated %}
-<div class="pagination">
-  <span class="page-links">
-    {% if page_obj.has_previous %}
-    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"
-      >previous</a
-    >
-    {% endif %}
-    <span class="page-current">
-      Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-    </span>
-    {% if page_obj.has_next %}
-    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}"
-      >next</a
-    >
-    {% endif %}
-  </span>
-</div>
-{% endif %} {% endblock %} {% endcomment %}
