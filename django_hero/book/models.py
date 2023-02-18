@@ -3,6 +3,7 @@ from django.db import models
 class Page(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
+    image = models.TextField(default='img/dragon.png')
     choices = models.ManyToManyField('Choice', blank=True)
 
 class Choice(models.Model):

@@ -5,7 +5,9 @@
     </header>
     <body>
         {% load static %}
-        <img src="{% static 'img/dragon.png' %}" alt="">
+        {% if page.image %}
+            <img src="{% static page.image%}" alt="">
+        {% endif %}
         {% load example %}
         <p class="page-content">{{ page.content | get_name:name }}</p>
         {% if page.title == "Page 2" %}

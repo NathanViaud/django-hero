@@ -19,7 +19,6 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 name = ''
-win = False
 
 class PageView(generic.DetailView):
     model = Page
@@ -28,7 +27,6 @@ class PageView(generic.DetailView):
         global name
         context['name'] = name
         return context
-        
 
 
 def characterCreation(request):
