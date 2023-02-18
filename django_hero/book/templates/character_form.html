@@ -1,37 +1,18 @@
-{% extends "base_generic.html" %} {% block content %}
-<article class="form">
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<article class="card">
     <header>
-        <h2>Character creation</h2>
+        <h2>Création du personnage</h2>
     </header>
-    <body>
-        <form action="/book/page/1">
-            <div class="grid">
-                <label for="firstname">
-                    First name
-                    <input
-                        type="text"
-                        id="firstname"
-                        placeholder="First name"
-                        required
-                    />
-                </label>
-                <label for="lastname">
-                    Last name
-                    <input
-                        type="text"
-                        id="lastname"
-                        placeholder="Last name"
-                    />
-                </label>
-            </div>
-            <label for="class">Class</label>
-            <select id="class">
-                <option value="" selected>Select a class...</option>
-                <option value="warrior">Warrior</option>
-                <option value="ranger">Ranger</option>
-                <option value="mage">Mage</option>
-            </select>
-            <button>Submit</button>
+    <body>        
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit"></input>
         </form>
     </body>
 </article>

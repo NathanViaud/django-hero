@@ -1,12 +1,13 @@
 {% extends "base_generic.html" %} {% block content %}
-<article>
+<article class="card">
     <header>
         <h2>{{ page.title }}</h2>
     </header>
     <body>
-        <p>
-            {{ page.content }}
-        </p>
+        {% load static %}
+        <img src="{% static 'img/dragon.png' %}" alt="">
+        {% load example %}
+        <p class="page-content">{{ page.content | get_name:name }}</p>
     </body>
     <div>
     </div>

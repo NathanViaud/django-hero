@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views import generic
 
 from .models import Page
 from django.contrib.auth.decorators import login_required
+
+from .forms import CharacterForm
 
 @login_required
 def index(request):
@@ -16,28 +18,31 @@ def index(request):
 
     return render(request, 'index.html', context=context)
 
+name = ''
+
 @login_required
-def page(request):
-    title = 'Django Hero'
-    subtitle = 'Django Hero is a book about Django'
-
-    context = {
-        'title': title,
-        'subtitle': subtitle,
-    }
-
-    return render(request, 'page.html', context=context)
-
 class PageView(generic.DetailView):
     model = Page
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        global name
+        context['name'] = name
+        return context
 
-def characterForm(request):
-    title = 'Django Hero'
-    subtitle = 'Django Hero is a book about Django'
 
+def characterCreation(request):
+    if request.method == 'POST':
+        form = CharacterForm(request.POST)
+        if form.is_valid():
+            global name
+            print('before', name)
+            name = form.cleaned_data['name']
+            print('after', name)
+            return redirect('book:page', pk=2)
+    else:
+        form = CharacterForm()
     context = {
-        'title': title,
-        'subtitle': subtitle,
+        'form': form,
     }
-
-    return render(request, 'character_form.html', context=context)
+    return render(request, 'character_form.html', context)
+    # return render(request, 'character_form.html')

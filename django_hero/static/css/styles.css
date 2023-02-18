@@ -8,7 +8,7 @@
     padding: 2rem;
 }
 
-.form {
+.card {
     max-width: 60rem;
     margin: auto;
 }
@@ -26,4 +26,20 @@ body > header {
 
 h2 {
     margin-bottom: 1rem;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+img {
+    height: 500px !important;
+    margin: auto;
+    display: flex;
+    border-radius: 16px;
+}
+
+.page-content {
+    margin-top: 1rem;
+    text-align: center;
 }
