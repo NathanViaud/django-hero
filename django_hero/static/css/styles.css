@@ -33,7 +33,7 @@ h1 {
 }
 
 img {
-    height: 500px !important;
+    max-height: 500px !important;
     margin: auto;
     display: flex;
     border-radius: 16px;
@@ -62,4 +62,20 @@ img {
 
 .buttons {
     margin-top: 1rem;
+}
+
+.games-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.games-list > a {
+    margin: .5rem 0;
+    width: fit-content;
+}
+
+.game-warning {
+    margin-bottom: 0;
+    color: red;
+    font-weight: 700;
 }
