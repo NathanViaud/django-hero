@@ -59,7 +59,7 @@ def characterCreation(request):
                     game.save()
                 except Game.DoesNotExist:
                     Game.objects.create(name=name, pageNumber=2, user=request.user)
-            return redirect('book:page', pk=2)
+            return redirect('book:page', pk=27)
     else:
         form = CharacterForm()
     context = {
