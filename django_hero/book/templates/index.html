@@ -5,19 +5,16 @@
     </header>
     <body>
         <div class="games-list">
-            {% if games %}
+            {% if game %}
             <p>Partie en cours: </p>
-            
-            {% for game in games %}
-                {% if game.name != '' %}
-                    <a role="button" href="/book/page/{{game.pageNumber}}">{{game.name}}</a>
-                {% endif %}
-            {% endfor %}
+            {% if game.name != '' %}
+                <a role="button" href="/book/page/{{game.pageNumber}}">{{game.name}}</a>
+            {% endif %}
             {% else %}
                 <p>Vous n'avez pas de sauvegarde local</p>
             {% endif %}
             <a role="button" href="/book/page/1">Nouvelle partie</a>
-            {% if games %}
+            {% if game %}
                 <p class="game-warning">Attention créer une nouvelle partie supprimera l'ancienne!</p>
             {% endif %}
         </div>

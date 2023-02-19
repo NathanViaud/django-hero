@@ -19,7 +19,7 @@ def index(request):
     context = {
         'title': title,
         'subtitle': subtitle,
-        'games': req,
+        'game': req,
     }
 
     return render(request, 'index.html', context=context)
