@@ -1,12 +1,26 @@
 {% extends "base_generic.html" %} {% block content %} {% csrf_token %}
-
 <article>
     <header>
         <h2>Livre dont vous êtes le héros</h2>
     </header>
     <body>
-        <p>Vous n'avez pas de sauvegarde local</p>
-        <a role="button" href="/book/page/1">Nouvelle partie</a>
+        <div class="games-list">
+            {% if games %}
+            <p>Partie en cours: </p>
+            
+            {% for game in games %}
+                {% if game.name != '' %}
+                    <a role="button" href="/book/page/{{game.pageNumber}}">{{game.name}}</a>
+                {% endif %}
+            {% endfor %}
+            {% else %}
+                <p>Vous n'avez pas de sauvegarde local</p>
+            {% endif %}
+            <a role="button" href="/book/page/1">Nouvelle partie</a>
+            {% if games %}
+                <p class="game-warning">Attention créer une nouvelle partie supprimera l'ancienne!</p>
+            {% endif %}
+        </div>
     </body>
 </article>
 {%endblock%}
