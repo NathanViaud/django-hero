@@ -8,6 +8,8 @@
 
 Un exemple d'implémentation est disponible à cette adresse: http://nathanviaud.pythonanywhere.com
 
+PS: Pour gagner cliquer sur le boutons caché dans la page juste après la création du personnage
+
 ## Setup
 Pour lancer le projet localement il faut installer les extensions suivantes:
 ```bash
