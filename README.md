@@ -2,9 +2,9 @@
 # Un jeu dont vous êtes le héros
 
 ## Auteurs
-Nathan VIAUD
-Carlos Ceren
-Mathis Enrici
+- Nathan VIAUD
+- Carlos Ceren
+- Mathis Enrici
 
 Un exemple d'implémentation est disponible à cette adresse: http://nathanviaud.pythonanywhere.com
 
