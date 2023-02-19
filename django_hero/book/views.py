@@ -32,7 +32,7 @@ class PageView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         global name
         context['name'] = name
-        if(name == '' and self.kwargs('pk') != 1):
+        if(name == ''):
             try:
                 req = Game.objects.get(user=self.request.user)
             except Game.DoesNotExist:
